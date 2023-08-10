@@ -1,2 +1,2 @@
 # trayLauncher
- Simple Task Tray Launcher
+ Simple Windows Task Tray Launcher
