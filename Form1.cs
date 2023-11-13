@@ -24,7 +24,7 @@ namespace Tray_Launcher {
         } // end exitClickHandler
 
         private string dnsLookup(string locationNumber) {
-            IPHostEntry ipHostEntry = Dns.GetHostEntry(locationNumber.TrimStart('0') + ".fisc.us");
+            IPHostEntry ipHostEntry = Dns.GetHostEntry(locationNumber.TrimStart('0') + ".example.com");
             IPAddress ipAddress = ipHostEntry.AddressList[0];
             string[] octets = ipAddress.ToString().Split('.');
             return octets[0] + "." + octets[1] + "." + octets[2] + ".";
@@ -44,7 +44,7 @@ namespace Tray_Launcher {
 
             }
 
-            string ofsPath = @"T:\vSphereClient_4.X_5.X\VMware vSphere Client.exe";
+            string ofsPath = @"C:\vSphereClient_4.X_5.X\VMware vSphere Client.exe";
 
             if (File.Exists(ofsPath)) {
                 return ofsPath;
@@ -93,7 +93,7 @@ namespace Tray_Launcher {
             ProcessStartInfo psParameters = new ProcessStartInfo();
 
             Process pBrowser = new Process();
-            pBrowser.StartInfo.FileName = "https://fisc.us/LocationLauncher/?ip=" + ipAddress;
+            pBrowser.StartInfo.FileName = "https://example.com/LocationLauncher/?ip=" + ipAddress;
 
             try {
                 pBrowser.Start();
